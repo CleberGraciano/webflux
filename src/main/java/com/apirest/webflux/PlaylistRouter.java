@@ -10,10 +10,10 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 
-@Configuration
+//@Configuration
 public class PlaylistRouter {
 
-    @Bean
+    //@Bean
     public RouterFunction<ServerResponse> route(PlaylistHandler playlistHandler){
         return RouterFunctions
                 .route(GET("/playlists").and(accept(MediaType.APPLICATION_JSON)), playlistHandler::findAll)

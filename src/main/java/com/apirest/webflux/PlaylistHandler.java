@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 import static org.springframework.web.reactive.function.BodyInserters.fromPublisher;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
-@Component
+//@Component
 public class PlaylistHandler {
 
     private final PlaylistService playlistService;
