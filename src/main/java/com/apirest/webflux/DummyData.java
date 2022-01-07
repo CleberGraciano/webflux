@@ -8,22 +8,22 @@ import reactor.core.publisher.Flux;
 
 import java.util.UUID;
 
-@Component
-public class DummyData implements CommandLineRunner {
-
-    private final PlaylistRepository playlistRepository;
-
-    DummyData(PlaylistRepository playlistRepository) {
-        this.playlistRepository = playlistRepository;
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-        playlistRepository.deleteAll()
-                .thenMany(
-                        Flux.just("Api Rest Spring boot", "Deploy de uma aplicação java no IBM Cloud", "Java 8", "GitHub")
-                                .map(nome -> new Playlist(UUID.randomUUID().toString(), nome))
-                                .flatMap(playlistRepository::save))
-                                .subscribe(System.out::println);
-    }
-}
+//@Component
+//public class DummyData implements CommandLineRunner {
+//
+//    private final PlaylistRepository playlistRepository;
+//
+//    DummyData(PlaylistRepository playlistRepository) {
+//        this.playlistRepository = playlistRepository;
+//    }
+//
+//    @Override
+//    public void run(String... args) throws Exception {
+//        playlistRepository.deleteAll()
+//                .thenMany(
+//                        Flux.just("Api Rest Spring boot", "Deploy de uma aplicação java no IBM Cloud", "Java 8", "GitHub")
+//                                .map(nome -> new Playlist(UUID.randomUUID().toString(), nome))
+//                                .flatMap(playlistRepository::save))
+//                                .subscribe(System.out::println);
+//    }
+//}
